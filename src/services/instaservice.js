@@ -20,4 +20,32 @@ export default class InstaService {
         const res = await this.getResource('posts/');
         return res;
     }
+    getAllPhotos = async () =>{
+        const res = await this.getResource('posts/');
+        return res.map(this._transformPosts);
+    }
+    getAllComments = async()=>{
+        const res = await this.getResource('posts/');
+        return res.map(this._getPropsForComments);
+    }
+
+    _getPropsForComments = (post) => {
+        
+        return{
+            photo: post.photo,
+            name: post.name,
+            descr: post.descr,
+            id: post.id,
+
+        }
+    }
+    //method transform post to 3/8 props (part of usefull props)
+    _transformPosts = (post) => {
+        
+        return{
+            src: post.src,
+            alt: post.alt,
+            id: post.id
+        }
+    }
 }

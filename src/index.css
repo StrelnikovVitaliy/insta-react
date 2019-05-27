@@ -13,6 +13,26 @@ body {
     max-width: 1140px;
     margin: 0 auto;
 }
+div.container > img{
+    width: 100px;
+    height: auto;
+    border-radius: 50px;
+    margin-top: 30px;
+
+}
+.comments .container{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.comments {
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.loading{
+    margin: auto;
+}
 
 header {
     height: 90px;
